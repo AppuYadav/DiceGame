@@ -1,0 +1,26 @@
+<html lang="en">
+	<head>
+		<% include ./partials/head %>
+		<script type="text/babel" src="/js/Login.js"></script>
+		<script type="text/babel">
+			if(sessionStorage.userName == undefined){
+				ReactDOM.render(
+					<Login />,
+					document.getElementById('root')
+				);
+			}else{
+				if(sessionStorage.role == 'admin'){
+					window.location.href = '/dashboard';
+				}else{
+					window.location.href = '/game';
+				}
+			}
+		</script>
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+	</body>
+</html>

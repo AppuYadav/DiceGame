@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<% include ./partials/head %>
+		<script type="text/babel" src="/js/thankYou.js"></script>
+		<script type="text/babel" src="/js/Game.js"></script>
+		<script type="text/babel">
+		if(sessionStorage.userName == undefined){
+			window.location.href = '/login';
+		}else{
+			if(sessionStorage.role == 'admin'){
+				window.location.href = '/dashboard';
+			}else{
+				ReactDOM.render(
+					<Game />,
+					document.getElementById('root')
+				);
+			}
+		}
+		</script>
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+		<div id="root">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<% include ./partials/head %>
+		<script type="text/babel" src="/js/DashBoard.js"></script>
+		<script type="text/babel">
+			if(sessionStorage.userName == undefined){
+				window.location.href = '/login';
+			}else{
+				if(sessionStorage.role == 'admin'){
+					ReactDOM.render(
+						<DashBoard />,
+						document.getElementById('root')
+					);
+				}else{
+					window.location.href = '/game';
+				}
+			}
+		</script>
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+		<div id="root">
+		</div>
+	</body>
+</html>
