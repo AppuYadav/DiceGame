@@ -13,6 +13,10 @@ router.get('/sign-up', (req, res) => {
 	res.render('login', { title: 'Login Gamer' })
 });
 
+router.get('/', (req, res) => {
+	res.render('login', { title: 'Login Gamer' })
+});
+
 router.get('/game', (req, res) => {
 	res.render('game', { title: 'Play Game' })
 });
